@@ -33,17 +33,30 @@ jobs:
          echo "Hello2"
          echo "NAME: ${{ env.APPLICATION_NAME}}"
        
-      - name: List current folder
+      - name: List current folder 1
         run: ls -la
-         
+        
+      - name: Git clone my repo
+        run: actions/checkout@v1 
+      
+      - name: List current folder2
+        run: ls -la
+      
+      
         
   my_deploy:
     runs-on: ubuntu-latest
     needs: [my_testing]
     steps:
       - name: Deploy Print Hello Message
-        run: echo "Hello Deploy job"
+         run: echo "Hello Deploy job"
    
       - name: Deploy package
-        run: echo "Deploy packege name is ${{ env.DEPLOY_PACKAGE_NAME }}"
+         run: echo "Deploy packege name is ${{ env.DEPLOY_PACKAGE_NAME }}"
+        
+      - name: Last test AWS
+         run: aws --version
+   
+      - name: Last test ZIP
+         run: zip
    
