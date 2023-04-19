@@ -32,6 +32,9 @@ jobs:
          echo "Hello1"
          echo "Hello2"
          echo "NAME: ${{ env.APPLICATION_NAME}}"
+       
+      - name: List current folder
+        run: ls -la
          
         
   my_deploy:
