@@ -49,14 +49,14 @@ jobs:
     needs: [my_testing]
     steps:
       - name: Deploy Print Hello Message
-         run: echo "Hello Deploy job"
+        run: echo "Hello Deploy job"
    
       - name: Deploy package
-         run: echo "Deploy packege name is ${{ env.DEPLOY_PACKAGE_NAME }}"
+        run: echo "Deploy packege name is ${{ env.DEPLOY_PACKAGE_NAME }}"
         
       - name: Last test AWS
-         run: aws --version
+        run: aws --version
    
       - name: Last test ZIP
-         run: zip
+        run: zip
    
